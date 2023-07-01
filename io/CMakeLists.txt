@@ -11,5 +11,6 @@ add_executable(04_lseek 04_lseek.c)
 add_executable(05_stdin 05_stdin.c)
 add_executable(06_stdout 06_stdout.c)
 add_executable(07_shared_file 07_shared_file.c)
+add_executable(08_dup 08_dup.c)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
