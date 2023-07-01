@@ -12,6 +12,7 @@ int main()
     if (fd == -1)
     {
         perror("open fail");
+        return -1;
     }
     
 
@@ -20,9 +21,8 @@ int main()
     if (write_len == -1)
     {
         perror("write fail");
+        return -1;
     }
-    
-    
 
     return 0;
 }

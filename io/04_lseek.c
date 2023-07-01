@@ -13,6 +13,7 @@ int main()
     if (fd == -1)
     {
         perror("open fail");
+        return -1;
     }
     
 
@@ -21,12 +22,14 @@ int main()
     if (write_len == -1)
     {
         perror("write fail");
+        return -1;
     }
 
     off_t offset = lseek(fd, 0, SEEK_SET);
     if (offset == -1)
     {
         perror("lseek fail");
+        return -1;
     }
     
     char read_buf[100] = {0};
@@ -34,6 +37,7 @@ int main()
     if (read_len == -1)
     {
         perror("read fail");
+        return -1;
     }
     printf("%s\n", read_buf);
     

@@ -11,6 +11,7 @@ int main()
     if (fd == -1)
     {
         perror("open fail");
+        return -1;
     }
     
 
@@ -19,6 +20,7 @@ int main()
     if (read_len == -1)
     {
         perror("read fail");
+        return -1;
     }
 
     printf("%s\n", read_buf);

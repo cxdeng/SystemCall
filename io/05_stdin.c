@@ -9,11 +9,18 @@ int main()
     if (read_len == -1)
     {
         perror("read fail");
+        return -1;
     }
     
-    printf("%s", read_buf);
-    
-    
+    printf("read_buf = %s", read_buf);
+
+    close(0);
+    read_len = read(0, (void *)read_buf, 50);
+    if (read_len == -1)
+    {
+        perror("read fail");
+        return -1;
+    }
 
     return 0;
 }

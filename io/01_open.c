@@ -10,6 +10,7 @@ int main()
     if (fd == -1)
     {
         perror("open fail");
+        return -1;
     }
     
 
