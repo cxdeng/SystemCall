@@ -25,7 +25,7 @@ int main()
         return -1;
     }
 
-    off_t offset = lseek(fd, 0, SEEK_SET);
+    __off_t offset = lseek(fd, 0, SEEK_SET);
     if (offset == -1)
     {
         perror("lseek fail");
@@ -40,8 +40,13 @@ int main()
         return -1;
     }
     printf("%s\n", read_buf);
-    
-    
+
+    __off_t file_size = lseek(fd, 0, SEEK_END);
+    if(file_size == -1){
+        perror("lseek fail");
+        return -1;
+    }
+    printf("file size = %ld\n", file_size);
 
     return 0;
 }
