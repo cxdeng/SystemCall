@@ -13,5 +13,7 @@ add_executable(06_stdout 06_stdout.c)
 add_executable(07_shared_file 07_shared_file.c)
 add_executable(08_dup 08_dup.c)
 add_executable(09_dup2 09_dup2.c)
+add_executable(10_fcntl_dup 10_fcntl_dup.c)
+add_executable(11_fcntl_fget_fset 11_fcntl_fget_fset.c)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
