@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22.1)
 
 project(io)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 add_executable(01_open 01_open.c)
 add_executable(02_read 02_read.c)
 add_executable(03_write 03_write.c)
