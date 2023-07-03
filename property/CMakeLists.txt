@@ -7,6 +7,8 @@ set(CMAKE_BUILD_TYPE Debug)
 add_executable(01_stat 01_stat.c)
 add_executable(02_mask 02_mask.c)
 add_executable(03_chmod 03_chmod.c)
+add_executable(04_symlink 04_symlink.c)
+add_executable(05_lstat 05_lstat.c)
 
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

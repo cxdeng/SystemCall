@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 
 int main(int argc, char** argv)
 {
@@ -12,23 +13,20 @@ int main(int argc, char** argv)
         printf("Invalid arguments\n");
         exit(-1);
     }
-    
 
-    struct stat *sta = (struct stat *)malloc(sizeof(struct stat));
-    int res = stat(argv[1], sta);
+
+    struct stat sta;
+    int res = lstat(argv[1], &sta);
     if (res == -1)
     {
        perror("stat fail");
-       _exit(-1);
+       exit(-1);
     }
 
     printf("file name = %s\n", argv[1]);
-    printf("st_uid = %d\n", sta->st_uid);
-    printf("st_gid = %d\n", sta->st_gid);
-    printf("st_mode = %u\n", sta->st_mode);
-    printf("st_nlink = %ld\n", sta->st_nlink);
-    printf("st_size = %ld\n", sta->st_size);
-
-
-    return 0;
+    printf("st_uid = %d\n", sta.st_uid);
+    printf("st_gid = %d\n", sta.st_gid);
+    printf("st_mode = %u\n", sta.st_mode);
+    printf("st_nlink = %ld\n", sta.st_nlink);
+    printf("st_size = %ld\n", sta.st_size);
 }

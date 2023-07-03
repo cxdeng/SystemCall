@@ -18,7 +18,7 @@ int main(int argc, char** argv)
     struct stat fileStat;
 
     // Get the permission bits of a file
-    if (stat(filename, &fileStat) == 0) {
+    if (lstat(filename, &fileStat) == 0) {
         fileMode = fileStat.st_mode;
 
         // Check the read permission of the file
@@ -43,31 +43,35 @@ int main(int argc, char** argv)
         }
 
 
-        if (S_ISREG(fileMode))
-        {
-            printf("File is regular file.\n");
-        }else if (S_ISDIR(fileMode))
-        {
-            printf("File is directory file.\n");
-        }else if (S_ISLNK(fileMode))
-        {
-            printf("File is link file.\n");
-        }else if (S_ISFIFO(fileMode))
-        {
-            printf("File is pipe file.\n");
-        }else if (S_ISCHR(fileMode))
-        {
-            printf("File is character device file.\n");
-        }else if (S_ISBLK(fileMode))
-        {
-            printf("File is block device file.\n");
-        }else if (S_ISSOCK(fileMode))
-        {
-            printf("File is socket file.\n");
+        if (S_ISREG(fileMode)){
+            printf("%s is a regular file.\n", filename);
         }
-        
+        else if (S_ISDIR(fileMode)){
+            printf("%s is a directory.\n", filename);
+        }
+        else if (S_ISCHR(fileMode)){
+            printf("%s is a character device.\n", filename);
+        }
+        else if (S_ISBLK(fileMode)){
+            printf("%s is a block device.\n", filename);
+        }
+        else if (S_ISFIFO(fileMode)){
+            printf("%s is a FIFO (named pipe).\n", filename);
+        }
+        else if (S_ISLNK(fileMode)){
+            printf("%s is a symbolic link.\n", filename);
+        }
+        else if (S_ISSOCK(fileMode)){
+            printf("%s is a socket.\n", filename);
+        }
+        else{
+            printf("%s is an unknown file type.\n", filename);
+        }
+
+            
     } else {
-        printf("Failed to get file status.\n");
+        printf("Failed to get file information.\n");
+        
     }
 
     return 0;
