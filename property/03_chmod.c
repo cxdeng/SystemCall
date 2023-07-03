@@ -23,6 +23,14 @@ int main()
         exit(-1);
     }
     
+    mode_t permission =  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
+    int ret = chmod("file/03_chmod.txt", permission);
+    if (ret == -1)
+    {
+        perror("chmod fail");
+        exit(-1);
+    }
+    
 
     return 0;
 }
