@@ -41,6 +41,31 @@ int main(int argc, char** argv)
         } else {
             printf("File does not have execute permission.\n");
         }
+
+
+        if (S_ISREG(fileMode))
+        {
+            printf("File is regular file.\n");
+        }else if (S_ISDIR(fileMode))
+        {
+            printf("File is directory file.\n");
+        }else if (S_ISLNK(fileMode))
+        {
+            printf("File is link file.\n");
+        }else if (S_ISFIFO(fileMode))
+        {
+            printf("File is pipe file.\n");
+        }else if (S_ISCHR(fileMode))
+        {
+            printf("File is character device file.\n");
+        }else if (S_ISBLK(fileMode))
+        {
+            printf("File is block device file.\n");
+        }else if (S_ISSOCK(fileMode))
+        {
+            printf("File is socket file.\n");
+        }
+        
     } else {
         printf("Failed to get file status.\n");
     }
