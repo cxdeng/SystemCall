@@ -31,7 +31,7 @@ int main()
         exit(-1);
     }
 
-    int ftrun = ftruncate(fd, 200);
+    int ftrun = ftruncate(fd, 10000);
     if (ftrun == -1)
     {
         perror("truncate fail");
