@@ -19,6 +19,7 @@ add_executable(12_rename 12_rename.c)
 add_executable(13_readlink 13_readlink.c)
 add_executable(14_mkdir 14_mkdir.c)
 add_executable(15_rmdir 15_rmdir.c)
+add_executable(16_opendir_readdir 16_opendir_readdir.c)
 
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
