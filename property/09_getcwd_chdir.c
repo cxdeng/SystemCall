@@ -16,7 +16,7 @@ int main()
     printf("path = %s\n", path);
 
 
-    path = "/home/cxdeng/Projects/VsCodeProjects/SystemCall/property/build/file";
+    path = "..";
     int ret = chdir(path);
     if (ret == -1)
     {
