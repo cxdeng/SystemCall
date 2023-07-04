@@ -17,7 +17,8 @@ add_executable(10_link_unlink 10_link_unlink.c)
 add_executable(11_remove 11_remove.c)
 add_executable(12_rename 12_rename.c)
 add_executable(13_readlink 13_readlink.c)
+add_executable(14_mkdir 14_mkdir.c)
+add_executable(15_rmdir 15_rmdir.c)
 
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/file2)
