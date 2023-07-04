@@ -11,6 +11,7 @@ add_executable(04_symlink 04_symlink.c)
 add_executable(05_lstat 05_lstat.c)
 add_executable(06_fstat 06_fstat.c)
 add_executable(07_umask 07_umask.c)
+add_executable(08_truncate_ftruncate 08_truncate_ftruncate.c)
 
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/file DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
